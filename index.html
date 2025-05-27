@@ -5,110 +5,375 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>João Gustavo | Portfólio Profissional</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #7e57c2;
+      --text-color: #333;
+      --background-color: #fff;
+      --header-bg: #f5f5f5;
+      --link-color: #7e57c2;
+      --shadow: rgba(0, 0, 0, 0.1);
+      --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: var(--font-family);
+      background-color: var(--background-color);
+      color: var(--text-color);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Navbar */
+
+    .navbar {
+      background: var(--header-bg);
+      box-shadow: 0 2px 5px var(--shadow);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .navbar .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      height: 60px;
+    }
+
+    /* Logo fixado à esquerda */
+    .logo {
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: var(--primary-color);
+      text-decoration: none;
+      position: relative;
+      z-index: 10;
+    }
+
+    /* Menu centralizado */
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      margin: 0;
+      padding: 0;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      justify-content: center;
+      width: auto;
+      font-weight: 600;
+    }
+
+    .nav-links li a {
+      text-decoration: none;
+      color: var(--text-color);
+      padding: 0.5rem 0.75rem;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
+
+    .nav-links li a:hover,
+    .nav-links li a:focus {
+      background-color: var(--primary-color);
+      color: white;
+      outline: none;
+    }
+
+    /* Botão toggle (hamburger) para mobile */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      width: 24px;
+      height: 18px;
+      justify-content: space-between;
+      z-index: 20;
+    }
+
+    .menu-toggle span {
+      display: block;
+      height: 3px;
+      background: var(--primary-color);
+      border-radius: 2px;
+    }
+
+    /* Conteúdo principal */
+
+    main {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+      flex-grow: 1;
+    }
+
+    header.hero {
+      text-align: center;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .profile-image {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1rem;
+      border: 3px solid var(--primary-color);
+    }
+
+    h1 {
+      margin: 0.5rem 0 0.25rem 0;
+      font-weight: 700;
+      color: var(--primary-color);
+    }
+
+    p {
+      margin: 0;
+      color: #555;
+      font-size: 1rem;
+    }
+
+    section {
+      margin-top: 2.5rem;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--primary-color);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    /* Tech Stack Icons */
+
+    .icons img {
+      height: 40px;
+      margin-right: 0.5rem;
+      vertical-align: middle;
+    }
+
+    .badges img {
+      margin-right: 0.5rem;
+      margin-bottom: 0.5rem;
+      vertical-align: middle;
+      border-radius: 5px;
+    }
+
+    /* Lista de projetos */
+
+    ul {
+      list-style: inside disc;
+      padding-left: 0;
+    }
+
+    ul li {
+      margin-bottom: 0.6rem;
+    }
+
+    ul li a {
+      color: var(--link-color);
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    ul li a:hover,
+    ul li a:focus {
+      text-decoration: underline;
+    }
+
+    /* Contato */
+
+    .contact .social a {
+      margin-right: 1rem;
+      display: inline-block;
+    }
+
+    /* Mobile Responsivo */
+
+    @media (max-width: 768px) {
+
+      .navbar .container {
+        justify-content: space-between;
+        height: 60px;
+      }
+
+      /* Logo à esquerda */
+      .logo {
+        position: relative;
+        z-index: 10;
+      }
+
+      /* Menu - fixar ao lado do toggle */
+      .nav-links {
+        position: static;
+        transform: none;
+        flex-direction: column;
+        gap: 0;
+        display: none;
+        width: 100%;
+        background-color: var(--background-color);
+        box-shadow: 0 4px 10px var(--shadow);
+        font-weight: 700;
+        margin-top: 8px;
+        border-radius: 6px;
+      }
+
+      /* Mostrar menu quando ativo */
+      .nav-links.show {
+        display: flex;
+      }
+
+      .nav-links li {
+        border-bottom: 1px solid #eee;
+      }
+
+      .nav-links li:last-child {
+        border-bottom: none;
+      }
+
+      .nav-links li a {
+        padding: 1rem 1.5rem;
+        display: block;
+      }
+
+      /* Botão toggle */
+      .menu-toggle {
+        display: flex;
+      }
+    }
+  </style>
 </head>
 
 <body>
-  <!-- Navbar -->
+
   <nav class="navbar">
     <div class="container">
-      <h1 class="logo">João Gustavo</h1>
-      <ul class="nav-links">
-        <li><a href="#about">Sobre</a></li>
+      <a href="#" class="logo">João Gustavo</a>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about">Sobre Mim</a></li>
         <li><a href="#tech">Tech Stack</a></li>
-        <li><a href="#certificacoes">Certificações</a></li>
-        <li><a href="#projetos">Projetos</a></li>
-        <li><a href="#contato">Contato</a></li>
+        <li><a href="#certifications">Certificações</a></li>
+        <li><a href="#projects">Projetos</a></li>
+        <li><a href="#contact">Contato</a></li>
       </ul>
+
+      <div class="menu-toggle" id="menu-toggle" aria-label="Alternar menu" aria-expanded="false" role="button" tabindex="0">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </div>
   </nav>
 
-  <!-- Hero -->
-  <header class="hero">
-    <img src="./images/avatar.jpg" alt="Foto de João Gustavo" class="profile-image" />
-    <h1>João Gustavo</h1>
-    <p>Estudante de Redes | Foco em Cloud, Segurança e Infraestrutura</p>
-  </header>
+  <main>
+    <header class="hero" id="about">
+      <img src="./images/avatar.jpg" alt="Foto de perfil de João Gustavo" class="profile-image" />
+      <h1>João Gustavo</h1>
+      <p>Estudante de Redes de Computadores | Foco em Cloud, Segurança e Infraestrutura</p>
+    </header>
 
-  <!-- Sobre -->
-  <section id="about" class="about section">
-    <h2>👋 Sobre Mim</h2>
-    <p>
-      Sou um estudante de Redes de Computadores com forte interesse em segurança da informação, computação em nuvem e automação de infraestrutura.
-      Experiência com manutenção, servidores Windows, Zabbix, Grafana, AWS e Azure. Gosto de desafios que envolvam
-      performance, confiabilidade e segurança.
-    </p>
-  </section>
+    <section class="about" id="about">
+      <h2>👋 Sobre Mim</h2>
+      <p>
+        Sou um estudante dedicado da área de Redes de Computadores com forte interesse por segurança da informação,
+        computação em nuvem e automação de infraestrutura. Tenho experiência prática com manutenção, servidores Windows,
+        Zabbix, Grafana, AWS, Azure e muito mais. Busco oportunidades onde eu possa crescer com um time de tecnologia,
+        contribuindo com soluções sólidas, seguras e escaláveis.
+      </p>
+    </section>
 
-  <!-- Tech Stack -->
-  <section id="tech" class="tech section">
-    <h2>🛠️ Tech Stack</h2>
-    <div class="icons">
-      <img src="https://skillicons.dev/icons?i=arduino,raspberrypi,linux,kali,ubuntu,debian,mint,vim,nginx,windows,powershell,vscode,grafana,prometheus" alt="Tech Icons">
-    </div>
-    <div class="badges">
-      <img src="https://img.shields.io/badge/Azure-blue?style=for-the-badge&logo=microsoft%20azure&logoColor=white">
-      <img src="https://img.shields.io/badge/AWS-000.svg?style=for-the-badge&logo=amazon-aws&logoColor=white">
-      <img src="https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white">
-      <img src="https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54">
-      <img src="https://img.shields.io/badge/MariaDB-003545?style=for-the-badge&logo=mariadb&logoColor=white">
-    </div>
-  </section>
+    <section class="tech" id="tech">
+      <h2>🛠️ Tech Stack</h2>
+      <div class="icons">
+        <img src="https://skillicons.dev/icons?i=arduino,raspberrypi,linux,kali,ubuntu,debian,mint,vim,nginx,windows,powershell,vscode,grafana,prometheus" alt="Tech Icons" />
+      </div>
+      <div class="badges">
+        <img src="https://img.shields.io/badge/Azure-blue?style=for-the-badge&logo=microsoft%20azure&logoColor=white" alt="Azure" />
+        <img src="https://img.shields.io/badge/AWS-000.svg?style=for-the-badge&logo=amazon-aws&logoColor=white" alt="AWS" />
+        <img src="https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java" />
+        <img src="https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54" alt="Python" />
+        <img src="https://img.shields.io/badge/MariaDB-003545?style=for-the-badge&logo=mariadb&logoColor=white" alt="MariaDB" />
+      </div>
+    </section>
 
-  <!-- Certificações -->
-  <section id="certificacoes" class="certifications section">
-    <h2>🏅 Certificações</h2>
-    <div class="cert-list">
-      <div>
-        <h3>CISCO</h3>
-        <a href="https://www.credly.com/badges/e769e815-1a68-4d82-807b-38dd6fd24f04/public_url" target="_blank">
-          <img src="https://images.credly.com/images/f4ccdba9-dd65-4349-baad-8f05df116443/CCNASRWE__1_.png" alt="CCNA SRWE" width="120" />
+    <section class="badges" id="certifications">
+      <h2>🏅 Certificações</h2>
+      <h3>CISCO</h3>
+      <a href="https://www.credly.com/badges/e769e815-1a68-4d82-807b-38dd6fd24f04/public_url" target="_blank" rel="noopener noreferrer">
+        <img src="https://images.credly.com/images/f4ccdba9-dd65-4349-baad-8f05df116443/CCNASRWE__1_.png" alt="CCNA SRWE" width="120" />
+      </a>
+      <a href="https://www.credly.com/badges/e3db2393-5e9e-4087-b6b2-e6ef645220c4/public_url" target="_blank" rel="noopener noreferrer">
+        <img src="https://images.credly.com/images/19e742ef-13be-4d26-87ed-ac8f5fd0643c/image.png" alt="CyberOps Associate" width="120" />
+      </a>
+
+      <h3>AWS</h3>
+      <a href="https://www.credly.com/badges/197cfad6-7f0f-4dfd-bf8c-1f634d6c8211/public_url" target="_blank" rel="noopener noreferrer">
+        <img src="https://images.credly.com/size/220x220/images/73e4a58b-a8ef-41a3-a7db-9183dd269882/image.png" alt="AWS Cloud Practitioner" width="120" />
+      </a>
+    </section>
+
+    <section class="projects" id="projects">
+      <h2>🚀 Projetos</h2>
+      <ul>
+        <li><a href="https://github.com/KOI4884/Projeto-Casa" target="_blank" rel="noopener noreferrer">Casa Inteligente para PCDs (SmartHome)</a></li>
+        <li><a href="https://github.com/KOI4884" target="_blank" rel="noopener noreferrer">Administração de Servidores Windows</a></li>
+        <li><a href="https://github.com/KOI4884" target="_blank" rel="noopener noreferrer">Monitoramento com Zabbix e Grafana</a></li>
+        <li><a href="https://github.com/KOI4884" target="_blank" rel="noopener noreferrer">Infraestrutura AWS e Azure (CommerCloud)</a></li>
+        <li><a href="https://github.com/KOI4884" target="_blank" rel="noopener noreferrer">Topologia Zero Trust com Cisco Packet Tracer</a></li>
+      </ul>
+    </section>
+
+    <section class="contact" id="contact">
+      <h2>📫 Contato</h2>
+      <div class="social">
+        <a href="https://www.linkedin.com/in/joaogustavodasilva/" target="_blank" rel="noopener noreferrer">
+          <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
         </a>
-        <a href="https://www.credly.com/badges/e3db2393-5e9e-4087-b6b2-e6ef645220c4/public_url" target="_blank">
-          <img src="https://images.credly.com/images/19e742ef-13be-4d26-87ed-ac8f5fd0643c/image.png" alt="CyberOps Associate" width="120" />
+        <a href="https://github.com/KOI4884" target="_blank" rel="noopener noreferrer">
+          <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
         </a>
       </div>
-      <div>
-        <h3>AWS</h3>
-        <a href="https://www.credly.com/badges/197cfad6-7f0f-4dfd-bf8c-1f634d6c8211/public_url" target="_blank">
-          <img src="https://images.credly.com/size/220x220/images/73e4a58b-a8ef-41a3-a7db-9183dd269882/image.png" alt="AWS Cloud Practitioner" width="120" />
-        </a>
-      </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <!-- Projetos -->
-  <section id="projetos" class="projects section">
-    <h2>🚀 Projetos</h2>
-    <ul>
-      <li><a href="https://github.com/KOI4884/Projeto-Casa" target="_blank">Casa Inteligente para PCDs (SmartHome)</a></li>
-      <li><a href="https://github.com/KOI4884" target="_blank">Administração de Servidores Windows</a></li>
-      <li><a href="https://github.com/KOI4884" target="_blank">Monitoramento com Zabbix e Grafana</a></li>
-      <li><a href="https://github.com/KOI4884" target="_blank">Infraestrutura AWS e Azure (CommerCloud)</a></li>
-      <li><a href="https://github.com/KOI4884" target="_blank">Topologia Zero Trust com Cisco Packet Tracer</a></li>
-    </ul>
-  </section>
+  <script>
+    // Toggle menu mobile
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
 
-  <!-- Contato -->
-  <section id="contato" class="contact section">
-    <h2>📫 Contato</h2>
-    <div class="social">
-      <a href="https://www.linkedin.com/in/joaogustavodasilva/" target="_blank">
-        <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
-      </a>
-      <a href="https://github.com/KOI4884" target="_blank">
-        <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
-      </a>
-    </div>
-  </section>
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
 
-  <!-- Rodapé -->
-  <footer class="footer">
-    <p>&copy; 2025 João Gustavo. Todos os direitos reservados.</p>
-  </footer>
+      // Atualiza aria-expanded para acessibilidade
+      const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+      menuToggle.setAttribute('aria-expanded', String(!expanded));
+    });
+
+    // Permitir abrir o menu com Enter ou Espaço no teclado no toggle
+    menuToggle.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        menuToggle.click();
+      }
+    });
+  </script>
 </body>
 
 </html>
