@@ -3,251 +3,60 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Portfólio - João Gustavo</title>
-  <style>
-    /* Reset básico */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #0d1117; /* fundo GitHub dark */
-      color: #c9d1d9; /* texto padrão */
-      line-height: 1.6;
-      padding: 2rem;
-      max-width: 900px;
-      margin: auto;
-    }
-
-    header {
-      text-align: center;
-      margin-bottom: 3rem;
-    }
-
-    /* Foto perfil oval */
-    .avatar {
-      width: 140px;
-      height: 140px;
-      border-radius: 50% / 60%; /* oval */
-      object-fit: cover;
-      border: 3px solid #58a6ff;
-      box-shadow: 0 0 12px #58a6ffaa;
-      margin: 0 auto 1rem auto;
-      display: block;
-    }
-
-    header h1 {
-      font-size: 2.8rem;
-      color: #58a6ff; /* azul GitHub */
-      margin-bottom: 0.2rem;
-    }
-
-    /* Sobre Mim */
-    section.about {
-      margin-bottom: 3rem;
-      padding: 1.5rem;
-      background: #161b22;
-      border-radius: 8px;
-      box-shadow: 0 0 8px #30363d;
-    }
-
-    section.about h2 {
-      color: #58a6ff;
-      margin-bottom: 1rem;
-      text-align: center;
-      border-bottom: 2px solid #58a6ff;
-      padding-bottom: 0.3rem;
-    }
-
-    /* Projetos */
-    section.projects {
-      margin-bottom: 3rem;
-    }
-
-    section.projects h2 {
-      color: #58a6ff;
-      margin-bottom: 1rem;
-      text-align: center;
-      border-bottom: 2px solid #58a6ff;
-      padding-bottom: 0.3rem;
-    }
-
-    .project-card {
-      background: #161b22;
-      padding: 1rem 1.2rem;
-      margin-bottom: 1rem;
-      border-radius: 8px;
-      box-shadow: 0 0 6px #30363d;
-      transition: transform 0.3s ease;
-    }
-
-    .project-card:hover {
-      transform: scale(1.03);
-      box-shadow: 0 0 14px #58a6ff;
-    }
-
-    .project-card a {
-      color: #58a6ff;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1.2rem;
-    }
-
-    .project-card p {
-      margin-top: 0.3rem;
-      color: #8b949e;
-    }
-
-    /* Tech Stack */
-    section.tech-stack {
-      margin-top: 3rem;
-      margin-bottom: 3rem;
-    }
-
-    section.tech-stack h2,
-    section.badges-section h2 {
-      color: #8957e5;
-      border-bottom: 1px solid #8957e5;
-      padding-bottom: 0.3rem;
-      margin-bottom: 1rem;
-      text-align: center;
-    }
-
-    .tech-icons img {
-      max-width: 90%;
-      height: auto;
-      margin-bottom: 1rem;
-      filter: drop-shadow(0 0 2px #58a6ff);
-    }
-
-    .tech-badges a {
-      margin: 0 6px;
-      display: inline-block;
-    }
-
-    .tech-badges img {
-      vertical-align: middle;
-      margin: 6px 3px;
-      transition: transform 0.3s ease;
-      cursor: pointer;
-    }
-
-    .tech-badges img:hover {
-      transform: scale(1.1);
-      filter: drop-shadow(0 0 6px #58a6ff);
-    }
-
-    /* Badges */
-    section.badges-section {
-      margin-top: 3rem;
-      text-align: center;
-    }
-
-    .badges-container img {
-      margin: 0.5rem;
-      cursor: default;
-      transition: transform 0.3s ease;
-    }
-
-    .badges-container img:hover {
-      transform: scale(1.1);
-      filter: drop-shadow(0 0 6px #58a6ff);
-    }
-
-    /* Links externos */
-    a {
-      color: #58a6ff;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-  </style>
+  <title>João Gustavo - Portfólio</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
     <img src="./images/avatar.png" alt="Foto de João Gustavo" class="avatar" />
     <h1>João Gustavo</h1>
+    <p>Estudante de Redes de Computadores | Estagiário de TI</p>
   </header>
 
   <section class="about">
     <h2>Sobre Mim</h2>
-    <p>Sou estudante de redes de computadores que se empenha cada dia a aprender sobre minha área de estudo, atualmente trabalho como estagiário de TI com manutenção de computadores, infraestrutura e configuração de servidores Windows.</p>
+    <p>
+      Sou estudante de Redes de Computadores e trabalho como estagiário na área de TI,
+      focado em manutenção de computadores, infraestrutura e configuração de servidores Windows.
+      Sou dedicado a aprender diariamente e me aprimorar na área de tecnologia.
+    </p>
   </section>
 
   <section class="projects">
     <h2>Projetos</h2>
+
     <div class="project-card">
-      <a href="https://github.com/KOI4884/Projeto-Casa" target="_blank" rel="noopener noreferrer">Projeto-Casa</a>
-      <p>Projeto pessoal focado em automação residencial e IoT utilizando Arduino e Raspberry Pi.</p>
+      <a href="https://github.com/KOI4884/Projeto-Casa" target="_blank" rel="noopener noreferrer">
+        Projeto Casa
+      </a>
+      <p>Projeto pessoal focado em automação residencial e monitoramento.</p>
     </div>
-    <!-- Adicione mais projetos aqui -->
+
+    <!-- Adicione outros projetos aqui -->
   </section>
 
   <section class="tech-stack">
     <h2>🛠️ Tech Stack</h2>
-    <p class="tech-icons" align="center">
-      <img
-        src="https://skillicons.dev/icons?i=arduino,raspberrypi,linux,kali,ubuntu,debian,mint,vim,nginx,windows,powershell,vscode,grafana,prometheus"
-        alt="Tech Icons"
-      />
+    <p align="center">
+      <img src="https://skillicons.dev/icons?i=arduino,raspberrypi,linux,kali,ubuntu,debian,mint,vim,nginx,windows,powershell,vscode,grafana,prometheus" alt="Ícones Tech Stack" />
     </p>
-
-    <p class="tech-badges" align="center">
-      <a href="https://azure.microsoft.com/" target="_blank" rel="noopener noreferrer">
-        <img
-          src="https://img.shields.io/badge/Azure-blue?style=for-the-badge&logo=microsoft%20azure&logoColor=blue&labelColor=FFFFFF"
-          alt="Azure"
-        />
-      </a>
-      <a href="https://aws.amazon.com/" target="_blank" rel="noopener noreferrer">
-        <img
-          src="https://img.shields.io/badge/AWS-000.svg?style=for-the-badge&logo=amazon-aws&logoColor=white"
-          alt="AWS"
-        />
-      </a>
-      <a href="https://openjdk.org/" target="_blank" rel="noopener noreferrer">
-        <img
-          src="https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white"
-          alt="Java"
-        />
-      </a>
-      <a href="https://www.python.org/" target="_blank" rel="noopener noreferrer">
-        <img
-          src="https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54"
-          alt="Python"
-        />
-      </a>
-      <a href="https://mariadb.org/" target="_blank" rel="noopener noreferrer">
-        <img
-          src="https://img.shields.io/badge/MariaDB-003545?style=for-the-badge&logo=mariadb&logoColor=white"
-          alt="MariaDB"
-        />
-      </a>
-      <a href="https://github.com/KOI4884" target="_blank" rel="noopener noreferrer">
-        <img
-          src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"
-          alt="GitHub"
-        />
-      </a>
+    <p align="center" class="tech-badges">
+      <img src="https://img.shields.io/badge/Azure-blue?style=for-the-badge&logo=microsoft%20azure&logoColor=blue&labelColor=FFFFFF" alt="Azure" />
+      <img src="https://img.shields.io/badge/AWS-000.svg?style=for-the-badge&logo=amazon-aws&logoColor=white" alt="AWS" />
+      <img src="https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java" />
+      <img src="https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54" alt="Python" />
+      <img src="https://img.shields.io/badge/MariaDB-003545?style=for-the-badge&logo=mariadb&logoColor=white" alt="MariaDB" />
+      <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
     </p>
   </section>
 
   <section class="badges-section">
     <h2>Badges</h2>
-    <div class="badges-container">
-      <!-- Exemplo de badges - substitua pelos seus -->
-      <img
-        src="https://img.shields.io/badge/Certified%20Learner-blue?style=for-the-badge"
-        alt="Certified Learner Badge"
-      />
-      <img
-        src="https://img.shields.io/badge/Top%20Contributor-green?style=for-the-badge"
-        alt="Top Contributor Badge"
-      />
+    <div class="badges-container" align="center">
+      <!-- Coloque aqui seus badges do README.md -->
+      <img src="https://github-readme-stats.vercel.app/api?username=KOI4884&show_icons=true&theme=radical" alt="Estatísticas GitHub" />
+      <img src="https://github-readme-streak-stats.herokuapp.com/?user=KOI4884&theme=radical" alt="Streak GitHub" />
+      <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=KOI4884&layout=compact&theme=radical" alt="Linguagens Mais Usadas" />
     </div>
   </section>
 </body>
