@@ -1,85 +1,85 @@
 /* style.css */
-
 body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #0d1117;
     color: #c9d1d9;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .container {
-    max-width: 960px;
-    margin: auto;
-    padding: 2rem;
+    line-height: 1.6;
   }
   
   h1, h2, h3 {
     color: #58a6ff;
-    margin-top: 2rem;
+    text-align: center;
   }
   
-  p.lead {
-    color: #8b949e;
-  }
-  
-  a {
-    color: #58a6ff;
-    text-decoration: none;
-  }
-  
-  a:hover {
-    text-decoration: underline;
+  header.hero {
+    background-color: #161b22;
+    padding: 2rem;
+    text-align: center;
   }
   
   .profile-image {
     width: 140px;
     height: 140px;
     border-radius: 50%;
-    object-fit: cover;
+    border: 3px solid #58a6ff;
     margin-bottom: 1rem;
-    border: 2px solid #58a6ff;
   }
   
-  .projects-list {
-    list-style-type: none;
-    padding-left: 0;
+  section {
+    margin: 3rem auto;
+    padding: 0 1rem;
+    max-width: 800px;
   }
   
-  .projects-list li {
-    margin: 0.5rem 0;
-  }
-  
-  .projects-list a {
-    font-weight: bold;
-    display: inline-block;
-    padding: 0.4rem 0.6rem;
+  section.about, section.tech, section.badges, section.projects, section.contact {
     background-color: #161b22;
-    border: 1px solid #30363d;
-    border-radius: 6px;
-    transition: background 0.3s ease;
-  }
-  
-  .projects-list a:hover {
-    background-color: #21262d;
-  }
-  
-  .badges img {
-    margin: 10px;
     border-radius: 8px;
-    transition: transform 0.3s ease;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 0 10px rgba(88, 166, 255, 0.1);
   }
   
-  .badges img:hover {
-    transform: scale(1.05);
+  .icons img, .badges img {
+    margin: 0.5rem;
   }
   
-  .social-links img {
-    margin: 10px;
-    transition: transform 0.2s ease-in-out;
+  ul {
+    list-style: none;
+    padding: 0;
   }
   
-  .social-links img:hover {
-    transform: scale(1.1);
+  ul li {
+    margin-bottom: 0.8rem;
+    font-size: 1.1rem;
+  }
+  
+  ul li a {
+    color: #58a6ff;
+    text-decoration: none;
+  }
+  
+  ul li a:hover {
+    text-decoration: underline;
+  }
+  
+  .contact .social {
+    text-align: center;
+  }
+  
+  .contact .social a {
+    margin: 0.5rem;
+    display: inline-block;
+  }
+  
+  @media (max-width: 600px) {
+    .profile-image {
+      width: 100px;
+      height: 100px;
+    }
+  
+    section {
+      padding: 1rem;
+    }
   }
   
