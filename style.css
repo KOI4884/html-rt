@@ -1,24 +1,37 @@
 body {
     margin: 0;
-    font-family: 'Segoe UI', sans-serif;
+    font-family: 'Roboto', sans-serif;
     background-color: #0d1117;
     color: #c9d1d9;
     line-height: 1.6;
   }
   
-  header {
+  .header {
     text-align: center;
     background-color: #161b22;
     padding: 2rem 1rem;
     border-bottom: 2px solid #58a6ff;
   }
   
-  header h1 {
+  .header .avatar {
+    width: 150px;
+    border-radius: 50%;
+    border: 3px solid #58a6ff;
+    margin-bottom: 1rem;
+  }
+  
+  .header h1 {
     color: #58a6ff;
     font-size: 2.5rem;
   }
   
-  section {
+  .social-links a {
+    margin: 0 10px;
+    color: #58a6ff;
+    text-decoration: none;
+  }
+  
+  main {
     max-width: 900px;
     margin: 2rem auto;
     padding: 1rem;
@@ -30,12 +43,19 @@ body {
     padding-bottom: 0.3rem;
   }
   
-  .project h3 a {
+  .project-card {
+    background-color: #161b22;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+  }
+  
+  .project-card h3 a {
     color: #58a6ff;
     text-decoration: none;
   }
   
-  .project h3 a:hover {
+  .project-card h3 a:hover {
     text-decoration: underline;
   }
   
@@ -43,15 +63,10 @@ body {
     margin: 0.3rem;
   }
   
-  footer {
+  .footer {
     text-align: center;
     padding: 1rem;
     background-color: #161b22;
     border-top: 2px solid #58a6ff;
-  }
-  
-  footer a {
-    color: #58a6ff;
-    text-decoration: none;
   }
   
