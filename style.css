@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
     background-color: #0d1117;
     color: #c9d1d9;
     line-height: 1.6;
@@ -13,22 +13,29 @@ body {
     border-bottom: 2px solid #58a6ff;
   }
   
-  .header .avatar {
+  .avatar {
     width: 150px;
-    border-radius: 50%;
+    height: 150px; /* manter altura igual à largura */
+    border-radius: 12px; /* cantos arredondados suaves */
     border: 3px solid #58a6ff;
     margin-bottom: 1rem;
+    object-fit: cover; /* cobre o espaço sem distorcer */
   }
   
   .header h1 {
     color: #58a6ff;
     font-size: 2.5rem;
+    margin: 0.2rem 0 0.5rem 0;
   }
   
   .social-links a {
     margin: 0 10px;
     color: #58a6ff;
     text-decoration: none;
+  }
+  
+  .social-links a:hover {
+    text-decoration: underline;
   }
   
   main {
